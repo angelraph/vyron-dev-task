@@ -1,0 +1,13 @@
+{
+  "name": "vyron-dev-task",
+  "version": "1.0.0",
+  "description": "Small demo repo used by VYRON's verified dev-task fulfillment workflow. Real bugs, real tests, real CI.",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0"
+  }
+}
