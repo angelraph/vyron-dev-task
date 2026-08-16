@@ -6,9 +6,8 @@
 
 /** Applies a percentage discount to a price. */
 export function calculateDiscount(price: number, percentOff: number): number {
-  // Bug: divides by 10 instead of 100, so a 10% discount takes off 100%
-  // of the price instead of 10%.
-  return price - price * (percentOff / 10);
+  // Corrected: divides by 100 to ensure proper percentage calculation.
+  return price - price * (percentOff / 100);
 }
 
 /** Checks whether a string is a palindrome, ignoring case, spaces, and
