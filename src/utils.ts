@@ -6,9 +6,8 @@
 
 /** Applies a percentage discount to a price. */
 export function calculateDiscount(price: number, percentOff: number): number {
-  // Bug: divides by 10 instead of 100, so a 10% discount takes off 100%
-  // of the price instead of 10%.
-  return price - price * (percentOff / 10);
+  // Fixed: divides by 100 instead of 10, so a 10% discount appropriately takes off 10% of the price.
+  return price - price * (percentOff / 100);
 }
 
 /** Checks whether a string is a palindrome, ignoring case, spaces, and
@@ -17,7 +16,7 @@ export function isPalindrome(input: string): boolean {
   // Bug: only lowercases the string, never strips non-alphanumeric
   // characters, so anything with spaces or punctuation fails even when
   // it's a genuine palindrome once normalized.
-  const normalized = input.toLowerCase();
+  const normalized = input.toLowerCase().replace(/[^a-z0-9]/g, "");
   return normalized === normalized.split("").reverse().join("");
 }
 
